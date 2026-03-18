@@ -1,23 +1,25 @@
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { Popup } from "./Popup";
 
 type Section = {
     id: string;
     heading: string;
-    content: string;
+    content: string[];
 };
 
 type ExpandableHeadingsProps = {
-    sections?: Section[];
+    sections?: Section[],
+    title: string,
+    icon: string,
 };
 
 export function ExpandableDiv({
-    sections = []
+    sections = [], title = "", icon = ""
 }: ExpandableHeadingsProps) {
     const [isPopupOpen, setIsPopupOpen] = useState(false);
     const [expandedIds, setExpandedIds] = useState<string[]>([]);
 
-    const sectionIds = useMemo(() => sections.map((section) => section.id), [sections]);
+    // const sectionIds = useMemo(() => sections.map((section) => section.id), [sections]);
 
     function openPopup(expandedId?: string) {
         setIsPopupOpen(true);
@@ -40,13 +42,13 @@ export function ExpandableDiv({
         );
     }
 
-    function expandAll() {
-        setExpandedIds(sectionIds);
-    }
+    // function expandAll() {
+    //     setExpandedIds(sectionIds);
+    // }
 
-    function collapseAll() {
-        setExpandedIds([]);
-    }
+    // function collapseAll() {
+    //     setExpandedIds([]);
+    // }
 
     return (
         <div className={`relative h-full w-full min-h-0 min-w-0 bg-white  ${isPopupOpen ? "overflow-hidden" : ""}`}>
@@ -100,8 +102,8 @@ export function ExpandableDiv({
                     expandedIds={expandedIds}
                     onToggle={toggleExpanded}
                     onClose={closePopup}
-                    onExpandAll={expandAll}
-                    onCollapseAll={collapseAll}
+                    title={title}
+                    icon={icon}
                 />
             )}
         </div>
