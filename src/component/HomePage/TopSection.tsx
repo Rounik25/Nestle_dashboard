@@ -1,5 +1,6 @@
 import { HomeKPI } from "../common/HomeKPI";
-import { KPI1 } from "./KPI/KPI1";
+import { KPI3 } from "./KPI/KPI3";
+// import { KPI1 } from "./KPI/KPI1";
 // import { ExpandableDiv } from "../common/ExpandableDiv";
 
 
@@ -32,12 +33,12 @@ import { KPI1 } from "./KPI/KPI1";
 
 export function TopSection(){
     return(
-        <div className="flex h-60 w-240">
+        <div className="flex h-70 w-120">
             <HomeKPI 
-                icon="src\assets\Home Page\HomeKPI2.svg"
-                title="This is a very very long heading and it will surely overflow"
+                icon="src\assets\Home Page\HomeKPI3.svg"
+                title="This is a dummy heading"
                 // inner={<ExpandableDiv sections={sectionsData} title={tempTitle} icon={tempIcon} />}
-                inner={<KPI1/>}
+                inner={<KPI3/>}
             />
         </div>
     )
