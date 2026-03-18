@@ -39,7 +39,7 @@ export function KPI1(){
                     <div className="h-3/5">
                         <RadialGauge value={66} />
                     </div>
-                    <div className="flex flex-col items-center">
+                    <div className="flex flex-col items-center pb-5">
                         <div className="text-lg font-bold">66%</div>
                         <div className="text-sm font-semibold">Median score of <span className="text-amber-400 font-bold">35%</span></div>
                     </div>
@@ -51,6 +51,14 @@ export function KPI1(){
                     </div>
                     <div className="flex flex-1 pt-3 px-2">
                         <IndustryAvgChart data={data} />
+                    </div>
+                    <div className="flex justify-end w-full min-w-0 px-2 py-1">
+                        <button
+                            className="px-3 pb-1 bg-amber-700 shadow-sm hover:bg-amber-600 text-white rounded-full"
+                            onClick={() => {}}
+                        >
+                            more
+                        </button>
                     </div>
                 </div>
             </div>

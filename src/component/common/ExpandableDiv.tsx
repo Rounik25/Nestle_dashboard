@@ -58,7 +58,7 @@ export function ExpandableDiv({
                         {sections.map((section) => (
                             <div
                                 key={section.id}
-                                className="flex rounded-xl pl-5 shadow-lg border-1 border-gray-200"
+                                className="flex rounded-xl pl-5 shadow-sm border-1 border-gray-200"
                             >
                                 <div className="flex flex-1 items-start justify-between">
                                     <h2 className="flex felx-wrap py-2 min-h-8 text-xs font-medium text-gray-900">{section.heading}</h2>
@@ -88,7 +88,7 @@ export function ExpandableDiv({
                 </div>
                 <div className="flex justify-end w-full min-w-0 px-2 py-1">
                     <button
-                        className="px-3 bg-amber-700 shadow-sm hover:bg-amber-600 text-white rounded-full"
+                        className="px-3 pb-1 bg-amber-700 shadow-sm hover:bg-amber-600 text-white rounded-full"
                         onClick={() => openPopup()}
                     >
                         more
