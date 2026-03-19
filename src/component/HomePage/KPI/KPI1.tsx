@@ -31,7 +31,6 @@ const data: ChartRow[] = [
 ];
 
 export function KPI1({value}:{value : number}){
-    console.log(value)
     return(
         <div className="flex h-full w-full min-h-0 min-w-0 overflow-hidden">
             <div className="flex flex-1 w-full min-h-0 min-w-0">

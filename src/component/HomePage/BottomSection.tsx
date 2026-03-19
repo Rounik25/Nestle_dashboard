@@ -11,8 +11,8 @@ export function BottomSection(){
             <div className="flex flex-1 w-full gap-5">
                 {recommendedData.map(data => {
                     return(
-                        <div className="flex-1 w-1/3 pt-5 pb-2 rounded">
-                            <HomeRecommended key={data.id} title={data.title} click={data.click} />
+                        <div key={data.id} className="flex-1 w-1/3 pt-5 pb-2 rounded">
+                            <HomeRecommended title={data.title} click={data.click} />
                         </div>
                     )
                 })}
