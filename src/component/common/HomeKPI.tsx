@@ -13,13 +13,13 @@ export function HomeKPI({
 }: HomeKPIProps ){
     return(
         <div className="flex flex-col h-full min-h-0 w-full min-w-0 overflow-hidden bg-white rounded-2xl shadow-md">
-            <div className="flex w-full min-h-8 px-3 py-2">
-                <div className="flex h-8 pb-2">
+            <div className="flex w-full min-h-5 h-auto px-3 pt-3">
+                <div className="flex h-full">
                     <img src={icon} alt="KPI Logo"/>
                 </div>
                 <div className="flex flex-wrap px-2 font-bold text-md">{title}</div>
             </div>
-            <div className="flex flex-1 w-full min-w-0 min-h-0">
+            <div className="flex flex-1 w-full min-w-0 min-h-0 mt-5">
                 {inner}
             </div>
             {/* <div className="flex justify-end w-full min-w-0 px-2 py-1">

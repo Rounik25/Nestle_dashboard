@@ -53,15 +53,15 @@ export function ExpandableDiv({
     return (
         <div className={`relative h-full w-full min-h-0 min-w-0 bg-white  ${isPopupOpen ? "overflow-hidden" : ""}`}>
             <div className={`flex flex-col h-full w-full overflow-hidden ${isPopupOpen ? "pointer-events-none select-none" : ""}`}>
-                <div className="w-full h-full min-w-0 min-h-0 overflow-hidden">
-                    <div className="flex flex-col px-2 gap-2">
+                <div className="flex w-full h-full min-w-0 min-h-0 overflow-hidden">
+                    <div className="flex flex-col px-15 gap-5 justify-start">
                         {sections.map((section) => (
                             <div
                                 key={section.id}
-                                className="flex rounded-xl pl-5 shadow-sm border-1 border-gray-200"
+                                className="flex rounded-2xl pl-5 shadow-sm border-1 border-gray-200"
                             >
                                 <div className="flex flex-1 items-start justify-between">
-                                    <h2 className="flex felx-wrap py-2 min-h-8 text-xs font-medium text-gray-900">{section.heading}</h2>
+                                    <h2 className="flex felx-wrap py-2 pr-5 min-h-10 items-center text-sm font-medium text-gray-900">{section.heading}</h2>
                                 </div>
                                 <div className="flex items-end">
                                     <button
@@ -76,22 +76,14 @@ export function ExpandableDiv({
                         ))}
                     </div>
 
-                    <div className="mt-8 flex justify-start">
-                        <button
-                            type="button"
-                            onClick={() => openPopup()}
-                            className="inline-flex items-center rounded-lg bg-gray-900 px-4 py-2 text-sm font-medium text-white transition hover:bg-gray-800"
-                        >
-                            Open popup
-                        </button>
-                    </div>
+                    
                 </div>
                 <div className="flex justify-end w-full min-w-0 px-2 py-1">
                     <button
                         className="px-3 pb-1 bg-amber-700 shadow-sm hover:bg-amber-600 text-white rounded-full"
                         onClick={() => openPopup()}
                     >
-                        more
+                        More
                     </button>
                 </div>
             </div>

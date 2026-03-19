@@ -13,7 +13,7 @@ export function KPI3() {
           className="px-3 pb-1 bg-amber-700 shadow-sm hover:bg-amber-600 text-white rounded-full"
           onClick={() => { }}
         >
-          more
+          More
         </button>
       </div>
     </div>

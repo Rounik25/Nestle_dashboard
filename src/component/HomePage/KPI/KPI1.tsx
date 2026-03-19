@@ -34,8 +34,8 @@ export function KPI1(){
     return(
         <div className="flex h-full w-full min-h-0 min-w-0 overflow-hidden">
             <div className="flex flex-1 w-full min-h-0 min-w-0">
-                <div className="flex flex-1 justify-center flex-col h-full basis-2/5">
-                    <div className="flex text-sm px-5 font-semibold">Priority Score</div>
+                <div className="relative flex flex-1 justify-center flex-col h-full basis-2/5">
+                    <div className="absolute flex text-sm px-5 font-semibold top-1">Priority Score</div>
                     <div className="h-3/5">
                         <RadialGauge value={66} />
                     </div>
@@ -45,14 +45,14 @@ export function KPI1(){
                     </div>
                 </div>
                 <div className="flex flex-col h-full basis-3/5">
-                    <div className="flex h-5">
-                        <div className="flex font-semibold">Industry average</div>
+                    <div className="flex h-4">
+                        <div className="flex font-semibold text-sm">Industry average</div>
                         <div className="flex h-full w-1 bg-amber-400 m-1"></div>
                     </div>
-                    <div className="flex flex-1 pt-3 px-2">
+                    <div className="flex flex-1 px-2">
                         <IndustryAvgChart data={data} />
                     </div>
-                    <div className="flex justify-end w-full min-w-0 px-2 py-1">
+                    <div className="flex justify-end w-full min-w-0 px-2 pb-1">
                         <button
                             className="px-3 pb-1 bg-amber-700 shadow-sm hover:bg-amber-600 text-white rounded-full"
                             onClick={() => {}}

@@ -34,7 +34,7 @@ export function Popup({
             {/* popup */}
             <div className="fixed inset-0 h-full z-50 flex items-center justify-center p-4">
                 <div
-                    className="relative max-h-[85vh] flex flex-col basis-7/10 overflow-hidden rounded-2xl bg-white shadow-2xl"
+                    className="relative max-h-[85vh] flex flex-col basis-3/5 overflow-hidden rounded-2xl bg-white shadow-2xl"
                     onClick={(e) => e.stopPropagation()}
                 >
                     {/* header */}
