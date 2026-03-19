@@ -2,6 +2,7 @@ import Navbar from "./component/common/Navbar"
 import { Routes, Route } from "react-router-dom"
 import HomePage from "./HomePage"
 import { SearchBar } from "./component/common/SearchBar"
+import { NarrativeScan } from "./NarrativeScan"
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
       <main className="h-full min-h-0 min-w-0 overflow-auto p-10 pt-5">
         <Routes>
           <Route path='/' element={<HomePage />} />
+          <Route path='/NarrativeScan' element={<NarrativeScan />} />
         </Routes>
       </main>
     </div>
