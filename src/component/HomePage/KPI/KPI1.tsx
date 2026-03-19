@@ -52,12 +52,12 @@ export function KPI1({value}:{value : number}){
                     <div className="flex flex-1 px-2">
                         <IndustryAvgChart data={data} />
                     </div>
-                    <div className="flex justify-end w-full min-w-0 px-2 pb-1">
+                    <div className="flex justify-end w-full min-w-0 px-2 pb-2">
                         <button
-                            className="px-3 pb-1 bg-amber-700 shadow-sm hover:bg-amber-600 text-white rounded-full"
+                            className="px-3 py-1 bg-amber-700 shadow-sm hover:bg-amber-600 text-white rounded-full"
                             onClick={() => {}}
                         >
-                            more
+                            More
                         </button>
                     </div>
                 </div>

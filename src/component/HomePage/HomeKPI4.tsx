@@ -19,7 +19,7 @@ export function HomeKPI4({
 }: HomeKPIProps ){
     return(
         <div className="flex flex-col h-full min-h-0 w-full min-w-0 overflow-hidden bg-white rounded-2xl shadow-md">
-            <div className="flex w-full min-h-5 h-auto px-3 pt-3">
+            <div className="flex w-full min-h-5 h-auto px-3 pt-4">
                 <div className="flex h-full">
                     <img src={icon} alt="KPI Logo"/>
                 </div>
