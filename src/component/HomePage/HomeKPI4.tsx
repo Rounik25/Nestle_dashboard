@@ -1,15 +1,21 @@
+import { ExpandableDiv } from "./KPI/ExpandableDiv";
+
+type Section = {
+    id: string;
+    heading: string;
+    content: string[];
+};
+
 type HomeKPIProps = {
   icon: string;
   title: string;
-  inner?: React.ReactNode;
-  button?: React.ReactNode;
-  onClick?: () => void;
+  sections: Section[]
 };
 
-export function HomeKPI({
+export function HomeKPI4({
   icon,
   title,
-  inner,
+  sections
 }: HomeKPIProps ){
     return(
         <div className="flex flex-col h-full min-h-0 w-full min-w-0 overflow-hidden bg-white rounded-2xl shadow-md">
@@ -20,16 +26,8 @@ export function HomeKPI({
                 <div className="flex flex-wrap px-2 font-bold text-md">{title}</div>
             </div>
             <div className="flex flex-1 w-full min-w-0 min-h-0 mt-5">
-                {inner}
+                <ExpandableDiv title={title} icon={icon} sections={sections} />
             </div>
-            {/* <div className="flex justify-end w-full min-w-0 px-2 py-1">
-                <button 
-                    className="px-3 bg-amber-700 shadow-sm hover:bg-amber-600 text-white rounded-full"                
-                    onClick={onClick}
-                >
-                    {button}
-                </button>
-            </div> */}
         </div>
     )
 }
