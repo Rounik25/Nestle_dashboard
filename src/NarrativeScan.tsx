@@ -1,7 +1,8 @@
 import { useState } from "react"
 import { Link } from "react-router-dom"
 import StackedAreaChart from "./component/NarrativeScan/StackedAreaChart"
-import BarChart1 from "./component/NarrativeScan/Barchart1"
+import BarChart1 from "./component/NarrativeScan/BarChart1"
+import PercentBarChart from "./component/NarrativeScan/PercentBarChart"
 
 export function NarrativeScan(){
     const [ view, setView ] = useState(false)
@@ -42,11 +43,11 @@ export function NarrativeScan(){
                 </div>
                 <div className="flex flex-col py-2 bg-white px-5 rounded-2xl shadow-lg">
                     <div className="w-full">
-                        <div className="text-xl font-bold">Which themes dominate their narrative?</div>
+                        <div className="text-xl font-bold">Which sub-themes dominate their narrative?</div>
                         <div className="text-lg font-bold px-5">Share of voice of sustainability topics</div>
                     </div>
-                    <div className="flex h-full w-full">
-                        <StackedAreaChart />
+                    <div className="flex h-full w-full pr-10">
+                        <PercentBarChart />
                     </div>
                 </div>
                 <div className="flex flex-col py-2 bg-white px-5 rounded-2xl shadow-lg">

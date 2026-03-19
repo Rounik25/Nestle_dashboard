@@ -60,7 +60,7 @@ export default function BarChart1() {
                         ticks={[0, 5, 10, 15, 20, 25]}
                     />
 
-                    <Legend wrapperStyle={{ fontSize: "10px" }} />
+                    <Legend wrapperStyle={{ fontSize: "10px" }} iconType="square" />
 
                     {["Fresh Water", "Tech and Innovation", "Circularity", "Food System"].map((key, i, arr) => (
                         <Bar key={key} dataKey={key} stackId="stack" fill={COLORS[i]}>

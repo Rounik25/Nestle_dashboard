@@ -81,7 +81,7 @@ export default function StackedAreaChart() {
           <XAxis dataKey="month" tick={{ fontSize: 12 }} label={{ value: "Month", position: "insideBottom", offset: -5 }} />
           <YAxis tick={{ fontSize: 12 }} tickLine={false} axisLine={false} width={25} />
           <Tooltip content={<CustomTooltip />} />
-          <Legend verticalAlign="bottom" height={36} iconType="circle" />
+          <Legend  wrapperStyle={{ fontSize: "10px" }} iconType="square" />
 
           <Area
             type="linear"
