@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import StackedAreaChart from "./component/NarrativeScan/StackedAreaChart";
-import BarChart1 from "./component/NarrativeScan/Barchart1";
+import BarChart1 from "./component/NarrativeScan/BarChart1";
 import PercentBarChart from "./component/NarrativeScan/PercentBarChart";
 import { BarChart2 } from "./component/NarrativeScan/Barchart2";
 
