@@ -12,12 +12,12 @@ export const recommendedData : recDataType[] = [
     },
     {
         id: 2,
-        title: "Prepare Nestlé for upcoming EU policy shifts on virgin plastics",
+        title: "Help Nestlé reposition their portfolio toward sustainable proteins and regen ag.",
         click: () => {console.log("hello")}
     },
     {
         id: 3,
-        title: "Prepare Nestlé for upcoming EU policy shifts on virgin plastics",
+        title: "Build a circular packaging roadmap to help Nestlé save costs and build resilience",
         click: () => {console.log("hello")}
     },
 ]
