@@ -40,11 +40,11 @@ export function Popup({
                     {/* header */}
                     <div className="flex items-center justify-between px-6 py-4">
                         <div className="flex">
-                            <div>
+                            <div className="flex h-full h-8">
                                 <img src={icon} alt="Heading Logo" />
                             </div>
                             <div>
-                                <h2 className="text-xl font-semibold">{title}</h2>
+                                <h2 className="text-xl font-semibold px-2">{title}</h2>
                             </div>
 
                         </div>

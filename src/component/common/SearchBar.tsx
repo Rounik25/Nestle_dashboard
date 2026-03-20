@@ -8,7 +8,7 @@ export function SearchBar() {
         <div className="relative flex h-full w-full min-w-0 min-h-0 overflow-hidden justify-center items-center">
             {isHome && (
                 <div className="absolute left-5 flex h-full w-full items-center justify-start">
-                    <div className="h-full min-h-0 min-w-0 overflow-hidden flex items-center ml-10 mr-5 border-2 border-black px-2 rounded-full bg-gray-300">
+                    <div className="h-full min-h-0 min-w-0 overflow-hidden flex items-center ml-10 mr-5 border-2 border-black px-1 rounded-full bg-gray-300">
                         <img
                             src="/src/assets/nestle.svg"
                             alt="logo"

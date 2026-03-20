@@ -5,10 +5,47 @@ import {
     YAxis,
     ResponsiveContainer,
     LabelList,
-    Legend
+    Legend,
+    Tooltip
 } from "recharts";
 
 const COLORS = ["#1E3A8A", "#386d64", "#2f3e63", "#857c2b", "#65450f"];
+
+function CustomTooltip({
+  active,
+  payload,
+  label,
+}: {
+  active?: boolean;
+  payload?: Array<{
+    name: string;
+    value: number;
+    color: string;
+  }>;
+  label?: string;
+}) {
+  if (!active || !payload?.length) return null;
+
+  return (
+    <div className="rounded border border-gray-300 bg-white px-3 py-2 text-xs shadow">
+      <p className="mb-1 font-semibold text-gray-700">{label}</p>
+      {payload
+        .slice()
+        .reverse()
+        .map((entry) => (
+          <div key={entry.name} className="flex items-center gap-2">
+            <span
+              className="inline-block h-2 w-2 rounded-full"
+              style={{ backgroundColor: entry.color }}
+            />
+            <span className="text-gray-700">
+              {entry.name}: {entry.value}
+            </span>
+          </div>
+        ))}
+    </div>
+  );
+}
 
 export default function BarChart1() {
     const data = [
@@ -59,6 +96,7 @@ export default function BarChart1() {
                         tickLine={false}
                         ticks={[0, 5, 10, 15, 20, 25]}
                     />
+                    <Tooltip content={<CustomTooltip />} />
 
                     <Legend wrapperStyle={{ fontSize: "10px" }} iconType="square" />
 

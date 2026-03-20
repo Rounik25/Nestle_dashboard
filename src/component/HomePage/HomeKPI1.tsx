@@ -12,7 +12,7 @@ export function HomeKPI1({
     return(
         <div className="flex flex-col h-full min-h-0 w-full min-w-0 overflow-hidden bg-white rounded-2xl shadow-md">
             <div className="flex w-full min-h-5 h-auto px-3 pt-3">
-                <div className="flex h-full">
+                <div className="flex h-full max-h-8">
                     <img src={icon} alt="KPI Logo"/>
                 </div>
                 <div className="flex flex-wrap px-2 font-bold text-md">{title}</div>

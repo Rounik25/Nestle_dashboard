@@ -78,7 +78,7 @@ export default function StackedAreaChart() {
           margin={{ top: 10, right:20, left: 0, bottom: 0 }}
         >
           <CartesianGrid stroke="none" vertical={false} />
-          <XAxis dataKey="month" tick={{ fontSize: 12 }} label={{ value: "Month", position: "insideBottom", offset: -5 }} />
+          <XAxis dataKey="month" tick={{ fontSize: 12 }} />
           <YAxis tick={{ fontSize: 12 }} tickLine={false} axisLine={false} width={25} />
           <Tooltip content={<CustomTooltip />} />
           <Legend  wrapperStyle={{ fontSize: "10px", paddingTop: "10px" }} iconType="square"/>

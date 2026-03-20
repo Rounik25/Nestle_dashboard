@@ -6,7 +6,8 @@ import {
   ResponsiveContainer,
   Cell,
   ReferenceLine,
-  LabelList
+  LabelList,
+  Tooltip
 } from "recharts";
 
 type ChartRow = {
@@ -39,6 +40,42 @@ const data: ChartRow[] = [
     color: "#630101",
   },
 ];
+
+function CustomTooltip({
+  active,
+  payload,
+  label,
+}: {
+  active?: boolean;
+  payload?: Array<{
+    name: string;
+    value: number;
+    color: string;
+  }>;
+  label?: string;
+}) {
+  if (!active || !payload?.length) return null;
+
+  return (
+    <div className="rounded border border-gray-300 bg-white px-3 py-2 text-xs shadow">
+      <p className="mb-1 font-semibold text-gray-700">{label}</p>
+      {payload
+        .slice()
+        .reverse()
+        .map((entry) => (
+          <div key={entry.name} className="flex items-center gap-2">
+            <span
+              className="inline-block h-2 w-2 rounded-full"
+              style={{ backgroundColor: entry.color }}
+            />
+            <span className="text-gray-700">
+              {entry.name}: {entry.value}
+            </span>
+          </div>
+        ))}
+    </div>
+  );
+}
 
 export function BarChart2() {
   const allValues = data.flatMap((d) =>
@@ -81,6 +118,8 @@ export function BarChart2() {
             tickLine={false}
             width={180}
           />
+
+          <Tooltip content={<CustomTooltip />}/>
 
           <ReferenceLine x={0} stroke="#666" strokeWidth={1} />
 

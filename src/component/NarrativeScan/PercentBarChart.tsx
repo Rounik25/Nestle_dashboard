@@ -7,6 +7,7 @@ import {
   ResponsiveContainer,
   XAxis,
   YAxis,
+  Tooltip,
 } from "recharts";
 
 const data = [
@@ -16,9 +17,67 @@ const data = [
   { name: "Biodiversity", total: 15, low: 52, mid: 23, high: 25 },
 ];
 
-const lowColors = ["#264b17", "#214b7d", "#6b6b6b", "#5a4a4a"];
+const lowColors = ["#264b17", "#214b7d", "#3a3a3a", "#5a4a4a"];
 const midColors = ["#315f1f", "#38639a", "#555555", "#8a6d6d"];
-const highColors = ["#6e9a63", "#5f88c9", "#2f415d", "#bf6d69"];
+const highColors = ["#6e9a63", "#5f88c9", "#6b6b6b", "#bf6d69"];
+
+type DataRow = (typeof data)[number];
+type SegmentKey = "low" | "mid" | "high";
+
+type TooltipEntry = {
+  name: string;
+  value: number | string;
+  dataKey?: string | number;
+  payload?: DataRow;
+};
+
+function getSegmentColor(topicName: string, segment: SegmentKey) {
+  const index = data.findIndex((d) => d.name === topicName);
+
+  if (index === -1) return "#999";
+
+  if (segment === "low") return lowColors[index];
+  if (segment === "mid") return midColors[index];
+  return highColors[index];
+}
+
+function CustomTooltip({
+  active,
+  payload,
+  label,
+}: {
+  active?: boolean;
+  payload?: TooltipEntry[];
+  label?: string;
+}) {
+  if (!active || !payload?.length || !label) return null;
+
+  return (
+    <div className="rounded border border-gray-300 bg-white px-3 py-2 text-xs shadow">
+      <p className="mb-1 font-semibold text-gray-700">{label}</p>
+
+      {payload
+        .slice()
+        .reverse()
+        .map((entry, i) => {
+          const segment = entry.dataKey as SegmentKey;
+          const color = getSegmentColor(label, segment);
+
+          return (
+            <div key={`${entry.name}-${i}`} className="flex items-center gap-2">
+              <span
+                className="inline-block h-2 w-2 rounded-full"
+                style={{ backgroundColor: color }}
+              />
+              <span className="text-gray-700">
+                {entry.name}: {entry.value}
+              </span>
+            </div>
+          );
+        })}
+    </div>
+  );
+}
 
 export default function PercentBarChart() {
   return (
@@ -31,31 +90,28 @@ export default function PercentBarChart() {
           margin={{ top: 20, right: 0, left: 0, bottom: 0 }}
         >
           <CartesianGrid vertical={false} />
-          <XAxis
-            dataKey="name"
-            tickLine={false}
-            axisLine={false}
-          />
+          <XAxis dataKey="name" tickLine={false} axisLine={false} />
           <YAxis
             domain={[0, 100]}
             ticks={[0, 50, 100]}
             tickLine={false}
             axisLine={false}
           />
+          <Tooltip content={<CustomTooltip />} />
 
-          <Bar dataKey="low" stackId="a">
+          <Bar dataKey="low" stackId="a" name="Low">
             {data.map((_, i) => (
               <Cell key={`low-${i}`} fill={lowColors[i]} />
             ))}
           </Bar>
 
-          <Bar dataKey="mid" stackId="a">
+          <Bar dataKey="mid" stackId="a" name="Mid">
             {data.map((_, i) => (
               <Cell key={`mid-${i}`} fill={midColors[i]} />
             ))}
           </Bar>
 
-          <Bar dataKey="high" stackId="a">
+          <Bar dataKey="high" stackId="a" name="High">
             {data.map((_, i) => (
               <Cell key={`high-${i}`} fill={highColors[i]} />
             ))}
