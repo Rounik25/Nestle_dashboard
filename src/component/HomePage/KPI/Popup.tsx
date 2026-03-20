@@ -56,7 +56,7 @@ export function Popup({
                     </div>
 
                     {/* content */}
-                    <div className="flex-1 overflow-y-auto p-6 space-y-4">
+                    <div className="flex-1 overflow-y-auto custom-scrollbar p-6 space-y-4">
                         {sections.map((section) => {
                             const isExpanded = expandedIds.includes(section.id);
 

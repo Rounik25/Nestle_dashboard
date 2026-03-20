@@ -42,10 +42,10 @@ export function Recommendations() {
                                         Understand Why?
                                     </div>
 
-                                    <div className="flex-1 min-h-0 overflow-auto">
+                                    <div className="flex-1 min-h-0 overflow-auto custom-scrollbar">
                                         <ul className="pl-5 list-disc">
                                             {data.why.map((point) => (
-                                                <li className="py-2" key={point}>
+                                                <li className="py-2 pr-2" key={point}>
                                                     {point}
                                                 </li>
                                             ))}

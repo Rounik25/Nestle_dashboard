@@ -54,7 +54,7 @@ export function ExpandableDiv({
         <div className={`relative h-full w-full min-h-0 min-w-0 bg-white  ${isPopupOpen ? "overflow-hidden" : ""}`}>
             <div className={`flex flex-col h-full w-full overflow-hidden ${isPopupOpen ? "pointer-events-none select-none" : ""}`}>
                 <div className="flex w-full h-full min-w-0 min-h-0 overflow-hidden">
-                    <div className="flex flex-col px-15 gap-2 justify-evenly overflow-y-auto">
+                    <div className="flex flex-col px-15 gap-2 justify-evenly overflow-y-auto custom-scrollbar">
                         {sections.map((section) => (
                             <div
                                 key={section.id}
