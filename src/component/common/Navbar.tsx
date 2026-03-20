@@ -4,8 +4,8 @@ export default function Navbar(){
 
     return(
         <div className="flex h-full min-h-0 w-full min-w-0 overflow-hidden bg-gray-50 justify-between">
-            <div className="flex h-full py-2 px-5">
-                <img src="src\assets\BainNavbarLogo.svg" alt="NavbarLogo" />
+            <div className="flex h-full py-2 pr-5">
+                <img src="src\assets\TrueNorthLogo.svg" alt="NavbarLogo" />
             </div>
             <div className="flex h-full min-h-0 min-w-0 overflow-hidden px-10">
                 <nav  className="flex gap-4 items-center overflow-x-auto scrollbar-hide whitespace-nowrap min-w-0 px-1">
@@ -18,9 +18,6 @@ export default function Navbar(){
                     <NavLink to="/Recommendations">
                         Recommendations    
                     </NavLink>    
-                    <NavLink to="/Comparisons">
-                        Comparisons    
-                    </NavLink>
                 </nav> 
             </div>
         </div>

@@ -75,7 +75,7 @@ export function NarrativeScan() {
                     >
                         <div className="w-full shrink-0">
                             <div className="text-xl font-bold">{card.title}</div>
-                            <div className="px-5 text-lg font-bold">{card.subtitle}</div>
+                            <div className="px-5 text-md font-bold">{card.subtitle}</div>
                         </div>
 
                         <div className={`${card.contentClassName} min-h-0 flex-1 my-2`}>

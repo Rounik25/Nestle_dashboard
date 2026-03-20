@@ -12,7 +12,7 @@ export function BottomSection(){
                 {recommendedData.map(data => {
                     return(
                         <div key={data.id} className="flex-1 w-1/3 pt-5 pb-2 rounded">
-                            <HomeRecommended title={data.title} click={data.click} />
+                            <HomeRecommended title={data.title} />
                         </div>
                     )
                 })}
